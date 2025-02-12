@@ -38,7 +38,6 @@ function startRound() {
     answersDiv.innerHTML = '';
     document.getElementById('result').textContent = '';
 
-
     q.answers.forEach(answer => {
         let btn = document.createElement('button');
         btn.textContent = answer;
