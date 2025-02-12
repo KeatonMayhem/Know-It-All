@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game</title>
+    <script defer src="script.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #game-container, #end-screen { display: none; }
+    </style>
+</head>
+<body>
+    <div id="start-screen">
+        <button onclick="startGame()">Start Trivia</button>
+    </div>
+
+    <div id="game-container">
+        <h1 id="question"></h1>
+        <div id="answers"></div>
+        <p>Score: <span id="score">1000</span></p>
+        <p>Time Left: <span id="timer">10</span> seconds</p>
+        <p id="result"></p>
+    </div>
+
+    <div id="end-screen">
+        <h2>Game Over!</h2>
+        <p>Final Score: <span id="final-score"></span></p>
+        <button onclick="startGame()">Play Again</button>
+    </div>
+</body>
+</html>
