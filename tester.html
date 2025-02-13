@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Data to Airtable</title>
+</head>
+<body>
+
+    <h1>Submit Your Score</h1>
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="number" id="score" placeholder="Enter your score">
+    <button onclick="sendData()">Submit</button>
+
+    <script>
+        function sendData() {
+            let name = document.getElementById("name").value;
+            let score = document.getElementById("score").value;
+            
+            let webhookURL = "https://script.google.com/macros/s/AKfycbzt1ckWNGQQNraG-4H4yJu0ev9duThPJERFVqIVwTJk-eYsEMaJbjqP17dpTbOJ0fhT4g/exec"; // Replace with your Google Apps Script URL
+
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: name, score: score })
+            })
+            .then(response => response.json())
+            .then(data => alert("Data sent successfully!"))
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+
+</body>
+</html>

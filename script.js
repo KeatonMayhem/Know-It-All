@@ -4,7 +4,7 @@ let score = 0;
 let timer;
 let timeLeft;
 const rounds = 5;
-const maxTime = 15;
+const maxTime = 10;
 const maxScore = 1000;
 
 async function fetchQuestions() {
